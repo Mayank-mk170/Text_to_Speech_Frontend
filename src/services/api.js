@@ -1,10 +1,14 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: "http://localhost:8080",
+  baseURL:
+    import.meta.env.VITE_API_URL ||
+    "http://localhost:8080",
+
   headers: {
     "Content-Type": "application/json",
   },
+
   timeout: 30000,
 });
 
@@ -29,24 +33,6 @@ export const getVoices = async () => {
 };
 
 // ==========================================
-// TRANSLATION
-// ==========================================
-
-export const translateText = async ({
-  text,
-  sourceLanguage,
-  targetLanguage,
-}) => {
-  const response = await api.post("/api/translate", {
-    text,
-    sourceLanguage,
-    targetLanguage,
-  });
-
-  return response.data;
-};
-
-// ==========================================
 // TEXT TO SPEECH
 // ==========================================
 
@@ -54,7 +40,7 @@ export const generateSpeech = async ({
   text,
   language,
   voice,
-   format,
+  format,
 }) => {
   const response = await api.post(
     "/api/tts",
@@ -62,7 +48,7 @@ export const generateSpeech = async ({
       text,
       language,
       voice,
-       format,
+      format,
     },
     {
       responseType: "blob",

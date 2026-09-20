@@ -1,0 +1,125 @@
+/* ==========================================
+   AUDIO DOWNLOAD ROW
+   ========================================== */
+
+.audio-download-row {
+  width: 100% !important;
+
+  display: flex !important;
+  flex-direction: row !important;
+
+  align-items: flex-end !important;
+  justify-content: center !important;
+
+  gap: 16px !important;
+
+  margin-top: 20px !important;
+}
+
+/* ==========================================
+   AUDIO FORMAT
+   ========================================== */
+
+.download-format-wrapper {
+  width: 180px !important;
+  min-width: 180px !important;
+
+  display: flex !important;
+  flex-direction: column !important;
+
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.download-format-wrapper label {
+  margin: 0 0 8px 0 !important;
+
+  color: #1f2937 !important;
+
+  font-size: 14px !important;
+  font-weight: 600 !important;
+}
+
+.download-format-select {
+  width: 180px !important;
+  height: 48px !important;
+
+  padding: 0 12px !important;
+
+  border: 1px solid #d1d5db !important;
+  border-radius: 8px !important;
+
+  background: #ffffff !important;
+  color: #111827 !important;
+
+  font-family: inherit !important;
+  font-size: 15px !important;
+
+  cursor: pointer !important;
+}
+
+/* ==========================================
+   DOWNLOAD BUTTON
+   ========================================== */
+
+.audio-download-row .audio-download-button {
+  width: 200px !important;
+  min-width: 200px !important;
+  height: 48px !important;
+
+  margin: 0 !important;
+  padding: 0 20px !important;
+
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  border: none !important;
+  border-radius: 24px !important;
+
+  background: #2563eb !important;
+
+  color: #ffffff !important;
+
+  font-family: inherit !important;
+  font-size: 15px !important;
+  font-weight: 600 !important;
+
+  line-height: 1 !important;
+
+  opacity: 1 !important;
+  visibility: visible !important;
+
+  cursor: pointer !important;
+}
+
+.audio-download-row .audio-download-button span {
+  color: #ffffff !important;
+
+  font-family: inherit !important;
+  font-size: 15px !important;
+  font-weight: 600 !important;
+
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+/* ==========================================
+   MOBILE
+   ========================================== */
+
+@media (max-width: 600px) {
+
+  .audio-download-row {
+    flex-wrap: wrap !important;
+  }
+
+  .download-format-wrapper {
+    width: 180px !important;
+    min-width: 180px !important;
+  }
+
+  .download-format-select {
+    width: 180px !important;
+  }
+}

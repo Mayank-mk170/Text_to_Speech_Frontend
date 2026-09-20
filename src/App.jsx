@@ -761,9 +761,7 @@ function App() {
                   Generated Audio
                 </h2>
 
-                <span>
-                  MP3 • Ready to play
-                </span>
+               
 
               </div>
 

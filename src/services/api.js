@@ -1,14 +1,7 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL:
-    import.meta.env.VITE_API_URL ||
-    "http://localhost:8080",
-
-  headers: {
-    "Content-Type": "application/json",
-  },
-
+  baseURL: "https://texttospeechbackend-production.up.railway.app",
   timeout: 30000,
 });
 
@@ -51,6 +44,9 @@ export const generateSpeech = async ({
       format,
     },
     {
+      headers: {
+        "Content-Type": "application/json",
+      },
       responseType: "blob",
     }
   );

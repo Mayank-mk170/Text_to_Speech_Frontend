@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 import TextInput from "./components/TextInput";
 import LanguageSelector from "./components/LanguageSelector";
@@ -8,10 +8,7 @@ import AudioPlayer from "./components/AudioPlayer";
 import DownloadButton from "./components/DownloadButton";
 import ErrorMessage from "./components/ErrorMessage";
 
-import {
-  checkBackendHealth,
-  generateSpeech,
-} from "./services/api";
+import { generateSpeech } from "./services/api";
 
 function App() {
   // ==========================================
@@ -43,9 +40,6 @@ function App() {
   const [textError, setTextError] = useState("");
 
   const [error, setError] = useState("");
-
-  const [backendStatus, setBackendStatus] =
-    useState("Checking...");
 
   const MAX_CHARACTERS = 500;
 
@@ -178,35 +172,6 @@ function App() {
 
   const voices =
     selectedLanguageData?.voices || [];
-
-  // ==========================================
-  // BACKEND HEALTH CHECK
-  // ==========================================
-
-  useEffect(() => {
-    const checkBackend = async () => {
-      try {
-        const result =
-          await checkBackendHealth();
-
-        console.log(
-          "Backend response:",
-          result
-        );
-
-        setBackendStatus("Connected");
-      } catch (error) {
-        console.error(
-          "Backend health check failed:",
-          error
-        );
-
-        setBackendStatus("Disconnected");
-      }
-    };
-
-    checkBackend();
-  }, []);
 
   // ==========================================
   // WORD COUNT
@@ -638,25 +603,6 @@ function App() {
                 Convert your text into
                 natural-sounding speech
               </p>
-
-              <div className="backend-status">
-
-                <span
-                  className={
-                    backendStatus ===
-                    "Connected"
-                      ? "status-dot connected"
-                      : backendStatus ===
-                        "Disconnected"
-                      ? "status-dot disconnected"
-                      : "status-dot checking"
-                  }
-                ></span>
-
-                Backend:{" "}
-                {backendStatus}
-
-              </div>
 
             </div>
 

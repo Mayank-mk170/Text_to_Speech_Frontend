@@ -19,7 +19,7 @@ function App() {
 
   const [language, setLanguage] = useState("en-IN");
 
-  const [voice, setVoice] = useState("shubh");
+  const [voice, setVoice] = useState("Joey");
 
   // Download format only
   const [downloadFormat, setDownloadFormat] =
@@ -51,14 +51,14 @@ function App() {
     {
       value: "en-IN",
       label: "English",
-      provider: "Sarvam",
+      provider: "Amazon Polly",
       voices: [
         {
-          value: "shubh",
+          value: "Joey",
           label: "Male",
         },
         {
-          value: "priya",
+          value: "Joanna",
           label: "Female",
         },
       ],
@@ -115,15 +115,15 @@ function App() {
     {
       value: "es",
       label: "Spanish",
-      provider: "Deepgram",
+      provider: "Amazon Polly",
       voices: [
         {
-          value: "aura-2-celeste-es",
-          label: "Female",
+          value: "Enrique",
+          label: "Male",
         },
         {
-          value: "aura-2-javier-es",
-          label: "Male",
+          value: "Lucia",
+          label: "Female",
         },
       ],
     },
@@ -131,15 +131,15 @@ function App() {
     {
       value: "fr",
       label: "French",
-      provider: "Deepgram",
+      provider: "Amazon Polly",
       voices: [
         {
-          value: "aura-2-agathe-fr",
-          label: "Female",
+          value: "Mathieu",
+          label: "Male",
         },
         {
-          value: "aura-2-hector-fr",
-          label: "Male",
+          value: "Celine",
+          label: "Female",
         },
       ],
     },
@@ -147,14 +147,14 @@ function App() {
     {
       value: "de",
       label: "German",
-      provider: "Deepgram",
+      provider: "Amazon Polly",
       voices: [
         {
-          value: "aura-2-julius-de",
+          value: "Hans",
           label: "Male",
         },
         {
-          value: "aura-2-viktoria-de",
+          value: "Marlene",
           label: "Female",
         },
       ],
